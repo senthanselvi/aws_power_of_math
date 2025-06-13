@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To the Power of Math!</title>
+    <style>
+        body {
+            background-color: #1f1f1f;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #2c2f33;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #86C232;
+            font-size: 18px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #eeeeee;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #86C232;
+            border: none;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #75aa28;
+        }
+
+        #resultBox {
+            margin-top: 25px;
+            background-color: #444;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            min-height: 30px;
+        }
+    </style>
+
+    <script>
+        const callAPI = (base, exponent) => {
+            const headers = new Headers();
+            headers.append("Content-Type", "application/json");
+
+            const raw = JSON.stringify({ base, exponent });
+
+            const requestOptions = {
+                method: 'POST',
+                headers: headers,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            document.getElementById("resultBox").innerText = "Calculating...";
+
+            fetch("https://e57ssy2wwg.execute-api.ap-southeast-2.amazonaws.com/dev", requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    const output = JSON.parse(result).body;
+                    document.getElementById("resultBox").innerText = output;
+                })
+                .catch(error => {
+                    document.getElementById("resultBox").innerText = "Error: " + error;
+                });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>TO THE POWER OF MATH!</h1>
+        <form onsubmit="event.preventDefault();">
+            <div class="form-group">
+                <label for="base">Base number:</label>
+                <input type="text" id="base" placeholder="Enter base number">
+            </div>
+            <div class="form-group">
+                <label for="exponent">...to the power of:</label>
+                <input type="text" id="exponent" placeholder="Enter exponent">
+            </div>
+            <button type="button" onclick="callAPI(document.getElementById('base').value, document.getElementById('exponent').value)">
+                CALCULATE
+            </button>
+        </form>
+        <div id="resultBox"></div>
+    </div>
+</body>
+</html>
