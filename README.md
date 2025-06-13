@@ -1,4 +1,4 @@
-# aws_power_of_math
+<img width="1470" alt="Screenshot 2025-06-13 at 12 25 41 PM" src="https://github.com/user-attachments/assets/7fdec4c0-9b97-439f-91d1-33846692f9e9" /># aws_power_of_math
 
 **Automated Power Calculator via AWS Lambda + API Gateway + DynamoDB**
 
@@ -67,3 +67,23 @@ This project is a serverless application that calculates the power of two number
 **8. Monitoring**
 * Use **AWS CloudWatch Logs** to view Lambda execution logs.
 * Monitor API Gateway logs if enabled for debugging request/response.
+
+![image](https://github.com/user-attachments/assets/1a186da3-55b0-4c50-81c0-81bcf9eb836f)
+
+![image](https://github.com/user-attachments/assets/0ebd8451-187d-4ec9-9ca8-5ceec116d82b)
+
+![image](https://github.com/user-attachments/assets/d0535d07-f952-4118-beae-5ec73b90fa5d)
+
+![image](https://github.com/user-attachments/assets/55cab539-5ac8-4ca2-87dc-3dd27172d1b9)
+
+![image](https://github.com/user-attachments/assets/14c4e8e0-b9b6-4beb-a5a3-65fb4b18a4bd)
+
+![image](https://github.com/user-attachments/assets/ab6492c2-0668-4537-b447-fb8c11a62158)
+
+
+
+
+
+
+
+
