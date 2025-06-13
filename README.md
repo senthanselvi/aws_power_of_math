@@ -18,7 +18,6 @@ This project is a serverless application that calculates the power of two number
 * AWS Amplify(for static web hosting)
 * IAM(for permissions)
 * Python
-* AWS CloudWatch(for monitoring/logs)
 
 **Working**
 1. A user enters a base and exponent in the web interface.
@@ -63,10 +62,6 @@ This project is a serverless application that calculates the power of two number
 * Visit the hosted frontend.
 * Enter numbers and click **Calculate**.
 * You should see the result and verify that the data is stored in DynamoDB.
- 
-**8. Monitoring**
-* Use **AWS CloudWatch Logs** to view Lambda execution logs.
-* Monitor API Gateway logs if enabled for debugging request/response.
 
 ![image](https://github.com/user-attachments/assets/1a186da3-55b0-4c50-81c0-81bcf9eb836f)
 
