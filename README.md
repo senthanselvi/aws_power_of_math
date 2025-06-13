@@ -1,4 +1,4 @@
-<img width="1470" alt="Screenshot 2025-06-13 at 12 25 41 PM" src="https://github.com/user-attachments/assets/7fdec4c0-9b97-439f-91d1-33846692f9e9" /># aws_power_of_math
+# aws_power_of_math
 
 **Automated Power Calculator via AWS Lambda + API Gateway + DynamoDB**
 
